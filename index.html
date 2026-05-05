@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flow Service Partners — Sales Hub</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;900&display=swap" rel="stylesheet">
+<style>
+  /* Brand Colors */
+  :root {
+    --ultra-blue: #0A2240;
+    --sky-blue: #87B7E8;
+    --vital-green: #00C08B;
+    --flow-gray: #D6DBE0;
+    --white: #ffffff;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Barlow', 'Segoe UI', sans-serif;
+    background: var(--flow-gray);
+    color: var(--ultra-blue);
+    min-height: 100vh;
+  }
+
+  /* HEADER */
+  header {
+    background: var(--ultra-blue);
+    padding: 0 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 68px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  header::after {
+    content: '';
+    position: absolute;
+    right: -60px;
+    bottom: -40px;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 28px solid rgba(135,183,232,0.15);
+  }
+
+  .logo-area {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  /* SVG Flow mark inline */
+  .flow-mark {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+  }
+
+  .logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+  }
+
+  .logo-text .flow {
+    font-size: 1.35rem;
+    font-weight: 900;
+    color: var(--white);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .logo-text .sub {
+    font-size: 0.62rem;
+    font-weight: 400;
+    color: var(--sky-blue);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-top: 2px;
+  }
+
+  .header-right {
+    font-size: 0.78rem;
+    color: var(--sky-blue);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  /* HERO */
+  .hero {
+    background: var(--ultra-blue);
+    padding: 3rem 2.5rem 3.5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    left: -80px;
+    top: -80px;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 50px solid rgba(135,183,232,0.08);
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    background: var(--flow-gray);
+    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+  }
+
+  .hero h1 {
+    font-size: 2.1rem;
+    font-weight: 900;
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+    position: relative;
+  }
+
+  .hero p {
+    color: var(--sky-blue);
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    position: relative;
+  }
+
+  /* GRID */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem 2rem 3rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  /* CARD */
+  .card {
+    background: var(--white);
+    border-radius: 14px;
+    padding: 2rem 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    box-shadow: 0 2px 16px rgba(10,34,64,0.09);
+    transition: transform 0.2s, box-shadow 0.2s;
+    border-left: 5px solid var(--ultra-blue);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card::after {
+    content: '';
+    position: absolute;
+    top: -30px;
+    right: -30px;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: var(--flow-gray);
+    opacity: 0.5;
+  }
+
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 28px rgba(10,34,64,0.14);
+  }
+
+  /* Accent left border colors */
+  .card:nth-child(1) { border-color: var(--ultra-blue); }
+  .card:nth-child(2) { border-color: var(--sky-blue); }
+  .card:nth-child(3) { border-color: var(--vital-green); }
+  .card:nth-child(4) { border-color: var(--sky-blue); }
+  .card:nth-child(5) { border-color: var(--ultra-blue); }
+
+  .card-label {
+    font-size: 0.65rem;
+    font-weight: 900;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--vital-green);
+    position: relative;
+  }
+
+  .card h2 {
+    font-size: 1.2rem;
+    font-weight: 900;
+    color: var(--ultra-blue);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    line-height: 1.2;
+    position: relative;
+  }
+
+  .card p {
+    font-size: 0.875rem;
+    color: #4a5f78;
+    line-height: 1.65;
+    flex: 1;
+    position: relative;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.65rem 1.3rem;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: 900;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: opacity 0.15s, transform 0.15s;
+    width: fit-content;
+    background: var(--ultra-blue);
+    color: var(--white);
+    position: relative;
+  }
+
+  .card:nth-child(3) .btn,
+  .card:nth-child(5) .btn { background: var(--vital-green); }
+  .card:nth-child(2) .btn,
+  .card:nth-child(4) .btn { background: var(--sky-blue); color: var(--ultra-blue); }
+
+  .btn:hover { opacity: 0.88; transform: translateX(2px); }
+
+  /* FOOTER */
+  footer {
+    background: var(--ultra-blue);
+    text-align: center;
+    padding: 1.5rem 2rem;
+    color: var(--sky-blue);
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  footer span { color: var(--vital-green); }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo-area">
+    <div class="logo-text">
+      <span class="flow">FLOW</span>
+      <span class="sub">Service Partners</span>
+    </div>
+  </div>
+  <div class="header-right">Sales Enablement Hub</div>
+</header>
+
+<div class="hero">
+  <h1>Your Sales Toolkit</h1>
+  <p>Everything your team needs — one place, one click.</p>
+</div>
+
+<div class="grid">
+
+  <div class="card">
+    <div class="card-label">CRM</div>
+    <h2>Pipedrive</h2>
+    <p>Manage your pipeline, track deals, log activity, and follow up on leads — all in your CRM. The source of truth for your sales process.</p>
+    <a class="btn" href="https://www.pipedrive.com" target="_blank">Open Pipedrive →</a>
+  </div>
+
+  <div class="card">
+    <div class="card-label">Targeting</div>
+    <h2>Ideal Client Profiles</h2>
+    <p>Know exactly who to go after. Reference ICP profiles to qualify leads faster and focus your energy on the right opportunities.</p>
+    <a class="btn" href="https://hortermann.github.io/flow-learning-portal/" target="_blank">View Profiles →</a>
+  </div>
+
+  <div class="card">
+    <div class="card-label">Platform</div>
+    <h2>Convex</h2>
+    <p>Access the Convex Atlas platform for operational tools and resources that support and enhance your sales workflow.</p>
+    <a class="btn" href="https://atlas.convexlabs.io/logout" target="_blank">Open Convex →</a>
+  </div>
+
+  <div class="card">
+    <div class="card-label">Finance</div>
+    <h2>Cost of Operations</h2>
+    <p>Build compelling business cases for prospects. Use this tool to calculate and demonstrate ROI and operational savings.</p>
+    <a class="btn" href="https://costofops.flowservice.com/.auth/basicAuth/login" target="_blank">Open Tool →</a>
+  </div>
+
+  <div class="card">
+    <div class="card-label">Intelligence</div>
+    <h2>Sales Brief</h2>
+    <p>Stay sharp with the latest market intelligence, competitive updates, and strategic insights to help you win more deals.</p>
+    <a class="btn" href="https://salesbrief.flowservice.com" target="_blank">View Brief →</a>
+  </div>
+
+</div>
+
+<footer>
+  &copy; 2026 <span>Flow Service Partners</span> &mdash; Sales Enablement Hub
+</footer>
+
+</body>
+</html>
