@@ -4,9 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Flow Service Partners — Sales Hub</title>
-<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;900&display=swap" rel="stylesheet">
 <style>
-  /* Brand Colors */
   :root {
     --ultra-blue: #0A2240;
     --sky-blue: #87B7E8;
@@ -14,253 +12,90 @@
     --flow-gray: #D6DBE0;
     --white: #ffffff;
   }
-
   * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  body {
-    font-family: 'Barlow', 'Segoe UI', sans-serif;
-    background: var(--flow-gray);
-    color: var(--ultra-blue);
-    min-height: 100vh;
-  }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--flow-gray); color: var(--ultra-blue); min-height: 100vh; }
 
   /* HEADER */
-  header {
-    background: var(--ultra-blue);
-    padding: 0 2.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 68px;
-    position: relative;
-    overflow: hidden;
-  }
-
-  header::after {
-    content: '';
-    position: absolute;
-    right: -60px;
-    bottom: -40px;
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    border: 28px solid rgba(135,183,232,0.15);
-  }
-
-  .logo-area {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-  }
-
-  /* SVG Flow mark inline */
-  .flow-mark {
-    width: 32px;
-    height: 32px;
-    flex-shrink: 0;
-  }
-
-  .logo-text {
-    display: flex;
-    flex-direction: column;
-    line-height: 1;
-  }
-
-  .logo-text .flow {
-    font-size: 1.35rem;
-    font-weight: 900;
-    color: var(--white);
-    letter-spacing: 1px;
-    text-transform: uppercase;
-  }
-
-  .logo-text .sub {
-    font-size: 0.62rem;
-    font-weight: 400;
-    color: var(--sky-blue);
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    margin-top: 2px;
-  }
-
-  .header-right {
-    font-size: 0.78rem;
-    color: var(--sky-blue);
-    letter-spacing: 1px;
-    text-transform: uppercase;
-  }
+  header { background: var(--ultra-blue); padding: 0 2.5rem; display: flex; align-items: center; justify-content: space-between; height: 68px; }
+  .logo-text { display: flex; flex-direction: column; line-height: 1; }
+  .logo-text .flow { font-size: 1.4rem; font-weight: 900; color: var(--white); letter-spacing: 2px; text-transform: uppercase; }
+  .logo-text .sub { font-size: 0.6rem; font-weight: 400; color: var(--sky-blue); letter-spacing: 4px; text-transform: uppercase; margin-top: 3px; }
+  .header-right { font-size: 0.75rem; color: var(--sky-blue); letter-spacing: 2px; text-transform: uppercase; }
 
   /* HERO */
-  .hero {
-    background: var(--ultra-blue);
-    padding: 3rem 2.5rem 3.5rem;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .hero::before {
-    content: '';
-    position: absolute;
-    left: -80px;
-    top: -80px;
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    border: 50px solid rgba(135,183,232,0.08);
-  }
-
-  .hero::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 40px;
-    background: var(--flow-gray);
-    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
-  }
-
-  .hero h1 {
-    font-size: 2.1rem;
-    font-weight: 900;
-    color: var(--white);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 0.5rem;
-    position: relative;
-  }
-
-  .hero p {
-    color: var(--sky-blue);
-    font-size: 0.95rem;
-    letter-spacing: 0.5px;
-    position: relative;
-  }
+  .hero { background: var(--ultra-blue); padding: 2.5rem 2.5rem 3rem; text-align: center; position: relative; overflow: hidden; }
+  .hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 36px; background: var(--flow-gray); border-radius: 50% 50% 0 0 / 100% 100% 0 0; }
+  .hero h1 { font-size: 2rem; font-weight: 900; color: var(--white); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.4rem; }
+  .hero p { color: var(--sky-blue); font-size: 0.9rem; letter-spacing: 0.5px; }
 
   /* GRID */
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-    gap: 1.5rem;
-    padding: 2rem 2rem 3rem;
-    max-width: 1100px;
-    margin: 0 auto;
-  }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; padding: 2rem 2rem 3rem; max-width: 1200px; margin: 0 auto; }
 
   /* CARD */
-  .card {
-    background: var(--white);
-    border-radius: 14px;
-    padding: 2rem 1.75rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.9rem;
-    box-shadow: 0 2px 16px rgba(10,34,64,0.09);
-    transition: transform 0.2s, box-shadow 0.2s;
-    border-left: 5px solid var(--ultra-blue);
-    position: relative;
-    overflow: hidden;
-  }
-
-  .card::after {
-    content: '';
-    position: absolute;
-    top: -30px;
-    right: -30px;
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
-    background: var(--flow-gray);
-    opacity: 0.5;
-  }
-
-  .card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 28px rgba(10,34,64,0.14);
-  }
-
-  /* Accent left border colors */
-  .card:nth-child(1) { border-color: var(--ultra-blue); }
+  .card { background: var(--white); border-radius: 14px; padding: 1.75rem; display: flex; flex-direction: column; gap: 0.85rem; box-shadow: 0 2px 16px rgba(10,34,64,0.09); transition: transform 0.2s, box-shadow 0.2s; border-left: 5px solid var(--ultra-blue); }
+  .card:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(10,34,64,0.13); }
   .card:nth-child(2) { border-color: var(--sky-blue); }
   .card:nth-child(3) { border-color: var(--vital-green); }
   .card:nth-child(4) { border-color: var(--sky-blue); }
   .card:nth-child(5) { border-color: var(--ultra-blue); }
+  .card:nth-child(6) { border-color: var(--vital-green); }
+  .card:nth-child(7) { border-color: var(--sky-blue); }
 
-  .card-label {
-    font-size: 0.65rem;
-    font-weight: 900;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--vital-green);
-    position: relative;
-  }
+  .card-label { font-size: 0.62rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--vital-green); }
+  .card h2 { font-size: 1.1rem; font-weight: 900; color: var(--ultra-blue); text-transform: uppercase; letter-spacing: 0.5px; }
+  .card p { font-size: 0.85rem; color: #4a5f78; line-height: 1.65; flex: 1; }
 
-  .card h2 {
-    font-size: 1.2rem;
-    font-weight: 900;
-    color: var(--ultra-blue);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    line-height: 1.2;
-    position: relative;
-  }
+  /* BUTTONS */
+  .btn-row { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.25rem; }
+  .btn { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.55rem 1rem; border-radius: 7px; font-size: 0.75rem; font-weight: 700; text-decoration: none; text-transform: uppercase; letter-spacing: 0.8px; transition: opacity 0.15s, transform 0.15s; white-space: nowrap; }
+  .btn:hover { opacity: 0.85; transform: translateX(2px); }
+  .btn-primary { background: var(--ultra-blue); color: var(--white); }
+  .btn-sky { background: var(--sky-blue); color: var(--ultra-blue); }
+  .btn-green { background: var(--vital-green); color: var(--white); }
+  .btn-outline { background: transparent; color: var(--ultra-blue); border: 2px solid var(--ultra-blue); }
+  .btn-ghost { background: var(--flow-gray); color: var(--ultra-blue); }
 
-  .card p {
-    font-size: 0.875rem;
-    color: #4a5f78;
-    line-height: 1.65;
-    flex: 1;
-    position: relative;
-  }
-
-  .btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.65rem 1.3rem;
-    border-radius: 8px;
-    font-size: 0.8rem;
-    font-weight: 900;
-    text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: opacity 0.15s, transform 0.15s;
-    width: fit-content;
-    background: var(--ultra-blue);
-    color: var(--white);
-    position: relative;
-  }
-
-  .card:nth-child(3) .btn,
-  .card:nth-child(5) .btn { background: var(--vital-green); }
-  .card:nth-child(2) .btn,
-  .card:nth-child(4) .btn { background: var(--sky-blue); color: var(--ultra-blue); }
-
-  .btn:hover { opacity: 0.88; transform: translateX(2px); }
+  /* B360 sub-buttons */
+  .b360-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-top: 0.25rem; }
+  .b360-btn { display: flex; align-items: center; justify-content: center; padding: 0.55rem 0.5rem; border-radius: 7px; font-size: 0.72rem; font-weight: 700; text-decoration: none; text-transform: uppercase; letter-spacing: 0.5px; background: var(--flow-gray); color: var(--ultra-blue); text-align: center; transition: background 0.15s, color 0.15s; border: 1.5px solid transparent; }
+  .b360-btn:hover { background: var(--ultra-blue); color: var(--white); }
 
   /* FOOTER */
-  footer {
-    background: var(--ultra-blue);
-    text-align: center;
-    padding: 1.5rem 2rem;
-    color: var(--sky-blue);
-    font-size: 0.75rem;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-  }
-
+  footer { background: var(--ultra-blue); text-align: center; padding: 1.5rem; color: var(--sky-blue); font-size: 0.72rem; letter-spacing: 1px; text-transform: uppercase; }
   footer span { color: var(--vital-green); }
+
+  /* MODAL */
+  .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(10,34,64,0.75); z-index: 1000; align-items: center; justify-content: center; padding: 1rem; }
+  .modal-overlay.open { display: flex; }
+  .modal { background: var(--white); border-radius: 16px; max-width: 720px; width: 100%; max-height: 88vh; overflow-y: auto; padding: 2.5rem; position: relative; }
+  .modal-close { position: sticky; top: 0; float: right; background: var(--flow-gray); border: none; border-radius: 50%; width: 32px; height: 32px; font-size: 1.1rem; cursor: pointer; color: var(--ultra-blue); font-weight: 900; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; }
+  .modal h2 { font-size: 1.3rem; font-weight: 900; color: var(--ultra-blue); text-transform: uppercase; margin-bottom: 0.25rem; }
+  .modal .modal-sub { font-size: 0.75rem; color: var(--vital-green); font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 1.5rem; }
+  .modal h3 { font-size: 0.95rem; font-weight: 900; color: var(--ultra-blue); margin: 1.25rem 0 0.4rem; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 2px solid var(--flow-gray); padding-bottom: 0.3rem; }
+  .modal p, .modal li { font-size: 0.875rem; color: #3a4f68; line-height: 1.7; }
+  .modal ul { padding-left: 1.25rem; margin-top: 0.25rem; }
+  .modal li { margin-bottom: 0.2rem; }
+  .modal strong { color: var(--ultra-blue); }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 0.5rem; }
+  .col-box { background: var(--flow-gray); border-radius: 8px; padding: 1rem; }
+  .col-box h4 { font-size: 0.8rem; font-weight: 900; color: var(--ultra-blue); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem; border-bottom: 2px solid var(--sky-blue); padding-bottom: 0.25rem; }
+  .col-box li { font-size: 0.8rem; }
+  .stage-pill { display: inline-block; background: var(--sky-blue); color: var(--ultra-blue); font-size: 0.72rem; font-weight: 700; padding: 0.2rem 0.6rem; border-radius: 20px; margin: 0.15rem 0; }
+  .table { width: 100%; border-collapse: collapse; margin-top: 0.5rem; font-size: 0.82rem; }
+  .table th { background: var(--ultra-blue); color: var(--white); padding: 0.5rem 0.75rem; text-align: left; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px; }
+  .table td { padding: 0.5rem 0.75rem; border-bottom: 1px solid var(--flow-gray); }
+  .table tr:last-child td { border: none; }
+  .highlight-box { background: var(--ultra-blue); color: var(--white); border-radius: 10px; padding: 1rem 1.25rem; margin-top: 1rem; }
+  .highlight-box h4 { font-size: 0.85rem; font-weight: 900; color: var(--vital-green); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem; }
+  .highlight-box li { font-size: 0.82rem; color: #c8d8e8; margin-bottom: 0.2rem; }
 </style>
 </head>
 <body>
 
 <header>
-  <div class="logo-area">
-    <div class="logo-text">
-      <span class="flow">FLOW</span>
-      <span class="sub">Service Partners</span>
-    </div>
+  <div class="logo-text">
+    <span class="flow">FLOW</span>
+    <span class="sub">Service Partners</span>
   </div>
   <div class="header-right">Sales Enablement Hub</div>
 </header>
@@ -272,46 +107,172 @@
 
 <div class="grid">
 
+  <!-- 1. PIPEDRIVE -->
   <div class="card">
     <div class="card-label">CRM</div>
     <h2>Pipedrive</h2>
-    <p>Manage your pipeline, track deals, log activity, and follow up on leads — all in your CRM. The source of truth for your sales process.</p>
-    <a class="btn" href="https://www.pipedrive.com" target="_blank">Open Pipedrive →</a>
+    <p>Manage your pipeline, track deals, log activity, and follow up on leads. The single source of truth for our sales process.</p>
+    <div class="btn-row">
+      <a class="btn btn-primary" href="https://www.pipedrive.com" target="_blank">Open Pipedrive →</a>
+      <a class="btn btn-sky" href="https://drive.google.com/file/d/1ODpPUsM4OXkwt3nBfFWIJ3sIxagIZy_U/view?usp=sharing" target="_blank">📄 View Guide</a>
+    </div>
   </div>
 
+  <!-- 2. ICP -->
   <div class="card">
     <div class="card-label">Targeting</div>
     <h2>Ideal Client Profiles</h2>
-    <p>Know exactly who to go after. Reference ICP profiles to qualify leads faster and focus your energy on the right opportunities.</p>
-    <a class="btn" href="https://hortermann.github.io/flow-learning-portal/" target="_blank">View Profiles →</a>
+    <p>Know exactly who to go after. Reference ICP profiles to qualify leads faster and focus energy on the right opportunities.</p>
+    <div class="btn-row">
+      <a class="btn btn-sky" href="https://hortermann.github.io/flow-learning-portal/" target="_blank">View Profiles →</a>
+    </div>
   </div>
 
+  <!-- 3. BUILDING360 -->
+  <div class="card">
+    <div class="card-label">Proprietary Platform</div>
+    <h2>Building360</h2>
+    <p>Our proprietary HVAC platform built to modernize how buildings are managed. Equipment data, building profiles, proposals, maintenance agreements, and Cost of Operations analysis — clarity where buildings need it most.</p>
+    <div class="b360-grid">
+      <a class="b360-btn" style="background:#F5C518;color:#1a1a1a;border-color:#F5C518;" href="https://cortez.fsp-360.com/auth/login" target="_blank">Cortez →</a>
+      <a class="b360-btn" style="background:#CC2200;color:#fff;border-color:#CC2200;" href="https://dynamic.fsp-360.com/auth/login" target="_blank">Dynamic →</a>
+      <a class="b360-btn" style="background:#1a6abf;color:#fff;border-color:#1a6abf;" href="https://perfection.fsp-360.com/" target="_blank">Perfection →</a>
+      <a class="b360-btn" style="background:#1a1a1a;color:#fff;border-color:#1a1a1a;" href="https://rbrooks.fsp-360.com/" target="_blank">R Brooks →</a>
+      <a class="b360-btn" style="grid-column:1/-1;background:#E87722;color:#fff;border-color:#E87722;" href="https://weber.fsp-360.com/auth/login" target="_blank">Weber →</a>
+    </div>
+  </div>
+
+  <!-- 4. CONVEX -->
   <div class="card">
     <div class="card-label">Platform</div>
     <h2>Convex</h2>
     <p>Access the Convex Atlas platform for operational tools and resources that support and enhance your sales workflow.</p>
-    <a class="btn" href="https://atlas.convexlabs.io/logout" target="_blank">Open Convex →</a>
+    <div class="btn-row">
+      <a class="btn btn-sky" href="https://atlas.convexlabs.io/logout" target="_blank">Open Convex →</a>
+    </div>
   </div>
 
+  <!-- 5. COST OF OPS -->
   <div class="card">
     <div class="card-label">Finance</div>
     <h2>Cost of Operations</h2>
-    <p>Build compelling business cases for prospects. Use this tool to calculate and demonstrate ROI and operational savings.</p>
-    <a class="btn" href="https://costofops.flowservice.com/.auth/basicAuth/login" target="_blank">Open Tool →</a>
+    <p>Build compelling business cases for prospects. Calculate and demonstrate ROI and operational savings clearly.</p>
+    <div class="btn-row">
+      <a class="btn btn-primary" href="https://costofops.flowservice.com/.auth/basicAuth/login" target="_blank">Open Tool →</a>
+    </div>
   </div>
 
+  <!-- 6. SALES BRIEF -->
   <div class="card">
     <div class="card-label">Intelligence</div>
     <h2>Sales Brief</h2>
     <p>Stay sharp with the latest market intelligence, competitive updates, and strategic insights to help you win more deals.</p>
-    <a class="btn" href="https://salesbrief.flowservice.com" target="_blank">View Brief →</a>
+    <div class="btn-row">
+      <a class="btn btn-green" href="https://salesbrief.flowservice.com" target="_blank">View Brief →</a>
+    </div>
   </div>
 
 </div>
 
-<footer>
-  &copy; 2026 <span>Flow Service Partners</span> &mdash; Sales Enablement Hub
-</footer>
+<footer>&copy; 2026 <span>Flow Service Partners</span> &mdash; Sales Enablement Hub</footer>
+
+<!-- PIPEDRIVE MODAL -->
+<div class="modal-overlay" id="pipedrive-modal" onclick="if(event.target===this)this.classList.remove('open')">
+  <div class="modal">
+    <button class="modal-close" onclick="document.getElementById('pipedrive-modal').classList.remove('open')">✕</button>
+
+    <h2>Pipedrive Overview & Expectations</h2>
+    <div class="modal-sub">Updated January 2026</div>
+
+    <h3>What Is a CRM Tool and Why It Matters?</h3>
+    <p>A Customer Relationship Management (CRM) tool is a centralized system that enables our sales organization to track, manage, and analyze all customer and prospect interactions throughout the sales process. It ensures that no lead or opportunity is lost and that every deal moves through a consistent sales funnel.</p>
+    <p style="margin-top:0.6rem">At Flow Service Partners, we use Pipedrive — a web-based CRM designed specifically for sales teams. Our current use is focused exclusively on sales pipeline management: tracking new opportunities, managing active deals, forecasting revenue, and maintaining accountability for sales activities.</p>
+
+    <h3>Our Focus & Deal Entry Requirements</h3>
+    <p>Every commercial opportunity must be entered and actively managed in Pipedrive.</p>
+    <table class="table" style="margin-top:0.6rem">
+      <tr><th>Deal Type</th><th>Entry Requirement</th></tr>
+      <tr><td>Retrofits / Projects / Change-outs</td><td>All opportunities ≥ $5,000</td></tr>
+      <tr><td>Maintenance Agreements</td><td>All opportunities (regardless of size)</td></tr>
+      <tr><td>Residential</td><td>Optional, based on local management preference</td></tr>
+    </table>
+
+    <h3>Why Pipedrive Matters</h3>
+    <div class="two-col">
+      <div class="col-box">
+        <h4>For Salespeople</h4>
+        <ul>
+          <li><strong>Increase close rates</strong> — identify bottlenecks and prioritize best opportunities</li>
+          <li><strong>Stay organized</strong> — view all active deals and next steps at a glance</li>
+          <li><strong>Save time</strong> — automated reminders replace manual spreadsheets</li>
+          <li><strong>Build professionalism</strong> — accurate data reinforces credibility</li>
+        </ul>
+      </div>
+      <div class="col-box">
+        <h4>For Management</h4>
+        <ul>
+          <li><strong>Real-time visibility</strong> — view deal progress and forecasts across all companies</li>
+          <li><strong>Accountability</strong> — standardized entry ensures accuracy</li>
+          <li><strong>Performance insights</strong> — monitor conversion rates and coach reps</li>
+          <li><strong>Forecasting</strong> — reliable data drives budgeting and goal-setting</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>Key Fields to Know</h3>
+    <ul>
+      <li><strong>Organization</strong> — Customer's business name</li>
+      <li><strong>Person</strong> — Your main contact at the organization</li>
+      <li><strong>Deal</strong> — The specific opportunity; include org name, building, and person</li>
+      <li><strong>Value</strong> — Maintenance: Year-1 value (12-month). Multiyear: average annual value</li>
+      <li><strong>Proposal Date</strong> — When the proposal was provided to the customer</li>
+      <li><strong>Expected Close Date</strong> — Estimated date for signed proposal or PO</li>
+      <li><strong>Source Origin</strong> — Where the lead originated (marketing, Atlas, referral, existing customer)</li>
+    </ul>
+
+    <h3>Deal Stages</h3>
+    <p>
+      <span class="stage-pill">Prospect Meeting</span>
+      <span class="stage-pill">Survey / Quoting</span>
+      <span class="stage-pill">Verify</span>
+      <span class="stage-pill">Pricing</span>
+      <span class="stage-pill">Proposal Submitted</span>
+      <span class="stage-pill">Negotiations</span>
+      <span class="stage-pill">Verbal Commitment</span>
+      <span class="stage-pill">Paused</span>
+      <span class="stage-pill">Sales Won</span>
+      <span class="stage-pill">Sales Lost</span>
+    </p>
+
+    <h3>Usage & Update Expectations</h3>
+    <ul>
+      <li><strong>When to enter — Maintenance:</strong> when a site survey begins</li>
+      <li><strong>When to enter — Projects:</strong> when pricing or scoping begins</li>
+      <li><strong>How often to update:</strong> review and update all open deals weekly (stage, value, expected close date)</li>
+      <li><strong>After closing:</strong> move to Sales Won or Sales Lost with all required fields complete</li>
+    </ul>
+
+    <h3>Reporting & Review Cadence</h3>
+    <table class="table">
+      <tr><th>Frequency</th><th>Responsibility</th><th>Focus</th></tr>
+      <tr><td>Weekly</td><td>Salesperson</td><td>Update pipeline and review open deals</td></tr>
+      <tr><td>Bi-Weekly / Monthly</td><td>Sales Manager</td><td>Review pipeline accuracy and forecasts</td></tr>
+      <tr><td>Quarterly</td><td>Leadership</td><td>Evaluate close rates, trends, and training needs</td></tr>
+    </table>
+
+    <div class="highlight-box">
+      <h4>Key Takeaways</h4>
+      <ul>
+        <li>Pipedrive is the single source of truth for our sales funnel</li>
+        <li>Every opportunity must be entered and maintained accurately</li>
+        <li>Consistent use improves organization, accountability, and close rates</li>
+        <li>Data quality directly drives how we measure success and plan growth</li>
+      </ul>
+    </div>
+
+    <p style="margin-top:1.25rem;font-size:0.8rem;color:#6a7f96;text-align:center">Questions or support? Contact your local Sales Manager or the Flow Service Partners CRM Administrator.</p>
+  </div>
+</div>
 
 </body>
 </html>
