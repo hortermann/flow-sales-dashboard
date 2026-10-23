@@ -15,39 +15,32 @@
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
   body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--flow-gray); color: var(--ultra-blue); min-height: 100vh; }
 
-  /* HEADER */
   header { background: var(--ultra-blue); padding: 0 2.5rem; display: flex; align-items: center; justify-content: space-between; height: 68px; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 12px rgba(0,0,0,0.25); }
   .logo-text { display: flex; flex-direction: column; line-height: 1; }
   .logo-text .flow { font-size: 1.4rem; font-weight: 900; color: var(--white); letter-spacing: 2px; text-transform: uppercase; }
   .logo-text .sub { font-size: 0.6rem; font-weight: 400; color: var(--sky-blue); letter-spacing: 4px; text-transform: uppercase; margin-top: 3px; }
   .header-right { font-size: 0.75rem; color: var(--sky-blue); letter-spacing: 2px; text-transform: uppercase; }
 
-  /* HERO */
   .hero { background: var(--ultra-blue); padding: 2.5rem 2.5rem 3rem; text-align: center; position: relative; overflow: hidden; }
   .hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 36px; background: var(--flow-gray); border-radius: 50% 50% 0 0 / 100% 100% 0 0; }
   .hero h1 { font-size: 2rem; font-weight: 900; color: var(--white); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.4rem; }
   .hero p { color: var(--sky-blue); font-size: 0.9rem; letter-spacing: 0.5px; }
 
-  /* GRID */
   .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; padding: 2rem 2rem 3rem; max-width: 1200px; margin: 0 auto; }
 
-  /* CARD */
   .card { background: var(--white); border-radius: 14px; display: flex; flex-direction: column; box-shadow: 0 2px 16px rgba(10,34,64,0.09); transition: transform 0.2s, box-shadow 0.2s; overflow: hidden; }
   .card:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(10,34,64,0.13); }
   .card-accent { height: 5px; background: var(--ultra-blue); flex-shrink: 0; }
   .card-accent.sky { background: var(--sky-blue); }
   .card-accent.green { background: var(--vital-green); }
-  .card-accent.gray { background: var(--flow-gray); border-bottom: 2px solid var(--ultra-blue); }
 
   .card-body { padding: 1.75rem; display: flex; flex-direction: column; flex: 1; gap: 0.85rem; }
   .card-label { font-size: 0.62rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--vital-green); }
   .card h2 { font-size: 1.1rem; font-weight: 900; color: var(--ultra-blue); text-transform: uppercase; letter-spacing: 0.5px; }
   .card p { font-size: 0.85rem; color: #4a5f78; line-height: 1.65; flex: 1; }
 
-  /* FREE BADGE */
   .free-badge { display: inline-flex; align-items: center; gap: 5px; background: #e0f7f0; color: var(--vital-green); border: 1px solid var(--vital-green); border-radius: 20px; padding: 3px 10px; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.05em; width: fit-content; }
 
-  /* BUTTONS */
   .btn-row { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.25rem; }
   .btn { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.55rem 1rem; border-radius: 7px; font-size: 0.75rem; font-weight: 700; text-decoration: none; text-transform: uppercase; letter-spacing: 0.8px; transition: opacity 0.15s, transform 0.15s; white-space: nowrap; cursor: pointer; border: none; }
   .btn:hover { opacity: 0.85; transform: translateX(2px); }
@@ -56,16 +49,13 @@
   .btn-green { background: var(--vital-green); color: var(--white); }
   .btn-ghost { background: var(--flow-gray); color: var(--ultra-blue); border: 1px solid #b0bcc8; }
 
-  /* BUILDING360 BUTTONS */
   .b360-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-top: 0.25rem; }
   .b360-btn { display: flex; align-items: center; justify-content: center; padding: 0.55rem 0.5rem; border-radius: 7px; font-size: 0.72rem; font-weight: 700; text-decoration: none; text-transform: uppercase; letter-spacing: 0.5px; text-align: center; transition: opacity 0.15s; }
   .b360-btn:hover { opacity: 0.85; }
 
-  /* FOOTER */
   footer { background: var(--ultra-blue); text-align: center; padding: 1.5rem; color: var(--sky-blue); font-size: 0.72rem; letter-spacing: 1px; text-transform: uppercase; }
   footer span { color: var(--vital-green); }
 
-  /* MODAL */
   .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(10,34,64,0.78); z-index: 200; align-items: center; justify-content: center; padding: 1rem; }
   .modal-overlay.active { display: flex; }
   .modal { background: var(--white); border-radius: 16px; width: 100%; max-width: 700px; max-height: 88vh; overflow-y: auto; box-shadow: 0 12px 48px rgba(0,0,0,0.25); position: relative; }
@@ -93,7 +83,6 @@
   tr:last-child td { border-bottom: none; }
   tr:nth-child(even) td { background: #f4f7fa; }
 
-  /* Step list */
   .step-list { list-style: none; padding: 0; }
   .step-list li { display: flex; gap: 14px; align-items: flex-start; padding: 0.85rem 0; border-bottom: 1px solid var(--flow-gray); }
   .step-list li:last-child { border-bottom: none; }
@@ -184,7 +173,20 @@
     </div>
   </div>
 
-  <!-- 5. ABSTRAKT -->
+  <!-- 5. FIELD SURVEY -->
+  <div class="card">
+    <div class="card-accent green"></div>
+    <div class="card-body">
+      <div class="card-label">Field Tool</div>
+      <h2>Field Survey</h2>
+      <p>Conduct and submit equipment surveys in the field. Capture building and equipment data on-site to feed into proposals, maintenance agreements, and Building360 profiles.</p>
+      <div class="btn-row">
+        <a class="btn btn-green" href="https://fieldsurvey.flowservice.com/" target="_blank">Open Field Survey →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. ABSTRAKT -->
   <div class="card">
     <div class="card-accent sky"></div>
     <div class="card-body">
@@ -197,7 +199,7 @@
     </div>
   </div>
 
-  <!-- 6. CONVEX -->
+  <!-- 7. CONVEX -->
   <div class="card">
     <div class="card-accent"></div>
     <div class="card-body">
@@ -210,7 +212,7 @@
     </div>
   </div>
 
-  <!-- 7. COST OF OPS -->
+  <!-- 8. COST OF OPS -->
   <div class="card">
     <div class="card-accent sky"></div>
     <div class="card-body">
@@ -223,7 +225,7 @@
     </div>
   </div>
 
-  <!-- 8. SALES BRIEF -->
+  <!-- 9. SALES BRIEF -->
   <div class="card">
     <div class="card-accent green"></div>
     <div class="card-body">
@@ -232,19 +234,6 @@
       <p>Stay sharp with the latest market intelligence, competitive updates, and strategic insights to help you win more deals.</p>
       <div class="btn-row">
         <a class="btn btn-green" href="https://salesbrief.flowservice.com" target="_blank">View Brief →</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- 9. FIELD SURVEY -->
-  <div class="card">
-    <div class="card-accent green"></div>
-    <div class="card-body">
-      <div class="card-label">Field Tool</div>
-      <h2>Field Survey</h2>
-      <p>Conduct and submit equipment surveys in the field. Capture building and equipment data on-site to feed into proposals, maintenance agreements, and Building360 profiles.</p>
-      <div class="btn-row">
-        <a class="btn btn-green" href="https://fieldsurvey.flowservice.com/" target="_blank">Open Field Survey →</a>
       </div>
     </div>
   </div>
@@ -266,7 +255,6 @@
 
 <footer>&copy; 2026 <span>Flow Service Partners</span> &mdash; Sales Enablement Hub</footer>
 
-
 <!-- MODAL: PIPEDRIVE -->
 <div class="modal-overlay" id="pipedrive-modal" onclick="if(event.target===this)closeModal('pipedrive-modal')">
   <div class="modal">
@@ -278,7 +266,6 @@
     <div class="modal-body">
       <h3>What Is a CRM and Why It Matters?</h3>
       <p>A CRM is a centralized system that enables our sales org to track, manage, and analyze all customer and prospect interactions. At Flow Service Partners, we use <strong>Pipedrive</strong> — focused exclusively on pipeline management: tracking opportunities, managing deals, forecasting revenue, and maintaining accountability.</p>
-
       <h3>Deal Entry Requirements</h3>
       <table>
         <thead><tr><th>Deal Type</th><th>Entry Requirement</th></tr></thead>
@@ -288,11 +275,9 @@
           <tr><td>Residential</td><td>Optional, based on local management preference</td></tr>
         </tbody>
       </table>
-
       <h3>Why Pipedrive Matters</h3>
       <p><strong>For Salespeople:</strong> Increase close rates, stay organized, save time with automated reminders, and build professionalism with accurate data.</p>
       <p><strong>For Management:</strong> Real-time visibility, accountability, performance insights, and reliable forecasting for budgeting and goals.</p>
-
       <h3>Key Fields to Know</h3>
       <ul>
         <li><strong>Organization</strong> — Customer's business name</li>
@@ -303,10 +288,8 @@
         <li><strong>Expected Close Date</strong> — Estimated date for signed proposal or PO</li>
         <li><strong>Source Origin</strong> — Where the lead originated</li>
       </ul>
-
       <h3>Deal Stages</h3>
       <div class="info-box">Prospect Meeting → Survey / Quoting → Verify → Pricing → Proposal Submitted → Negotiations → Verbal Commitment → Paused → <strong>Sales Won / Sales Lost</strong></div>
-
       <h3>Usage &amp; Update Expectations</h3>
       <ul>
         <li><strong>Maintenance deals:</strong> Enter when a site survey begins</li>
@@ -314,7 +297,6 @@
         <li><strong>Update frequency:</strong> Review and update all open deals weekly</li>
         <li><strong>After closing:</strong> Move to Sales Won or Sales Lost with all required fields complete</li>
       </ul>
-
       <h3>Reporting &amp; Review Cadence</h3>
       <table>
         <thead><tr><th>Frequency</th><th>Responsibility</th><th>Focus</th></tr></thead>
@@ -324,12 +306,10 @@
           <tr><td>Quarterly</td><td>Leadership</td><td>Evaluate close rates, trends, and training needs</td></tr>
         </tbody>
       </table>
-
       <div class="info-box"><strong>Key Takeaways:</strong> Pipedrive is the single source of truth for our sales funnel. Every opportunity must be entered and maintained accurately. Data quality directly drives how we measure success and plan growth.</div>
     </div>
   </div>
 </div>
-
 
 <!-- MODAL: DATA AXLE -->
 <div class="modal-overlay" id="dataaxle-modal" onclick="if(event.target===this)closeModal('dataaxle-modal')">
@@ -340,12 +320,10 @@
       <button class="modal-close" onclick="closeModal('dataaxle-modal')">✕</button>
     </div>
     <div class="modal-body">
-
       <div class="tip-box">
         <strong>🆓 Why it's free</strong>
         Data Axle (formerly Reference USA) is licensed by thousands of public libraries across the US. Your public library card is your login — no subscription needed.
       </div>
-
       <h3>What You Can Do With Data Axle</h3>
       <ul>
         <li>Search 16M+ US businesses by industry, geography, employee count, and revenue</li>
@@ -354,7 +332,6 @@
         <li>Filter by business age, ownership type, and more</li>
         <li>Export lists directly to CSV</li>
       </ul>
-
       <h3>How to Access It — Step by Step</h3>
       <ol class="step-list">
         <li>
@@ -375,7 +352,7 @@
           <div class="step-num">3</div>
           <div class="step-content">
             <strong>Look for "Data Axle" or "Reference Solutions"</strong>
-            <span>It may be listed as <em>Data Axle Reference Solutions</em>, <em>Reference USA</em>, or <em>Data Axle Business</em>.</span>
+            <span>It may be listed as Data Axle Reference Solutions, Reference USA, or Data Axle Business.</span>
           </div>
         </li>
         <li>
@@ -393,7 +370,6 @@
           </div>
         </li>
       </ol>
-
       <h3>Helpful NAICS Codes for HVAC Prospecting</h3>
       <table>
         <thead><tr><th>NAICS Code</th><th>Description</th></tr></thead>
@@ -406,16 +382,13 @@
           <tr><td>611310</td><td>Colleges, Universities &amp; Professional Schools</td></tr>
         </tbody>
       </table>
-
       <div class="info-box">
         <strong>Pro tip:</strong> Data Axle limits exports per session, but there's no cap on how many sessions you run. Build targeted lists by ZIP code or neighborhood to stay within limits while maximizing coverage.
       </div>
-
       <div class="btn-row">
         <a href="https://www.dataaxle.com/resource-library/data-axle-reference-solutions/" target="_blank" class="btn btn-green">Data Axle Library Info →</a>
         <a href="https://www.worldcat.org/libraries" target="_blank" class="btn btn-ghost">Find Your Library →</a>
       </div>
-
     </div>
   </div>
 </div>
